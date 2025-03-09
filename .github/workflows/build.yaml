@@ -1,0 +1,94 @@
+name: Build
+
+on:
+  release:
+    types: [published]
+
+  pull_request:
+    types:
+      - opened
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dump Github context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      - name: Checkout website_flutter branch
+        uses: actions/checkout@v4
+        with:
+          ref: website_flutter
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.27.3"
+
+      - name: Configurate Flutter
+        run: |
+          flutter config --no-analytics
+          flutter config --no-cli-animations
+          flutter --version
+        working-directory: ./frontend 
+
+      - name: Install Pub Dependencies
+        run: flutter pub get
+        working-directory: ./frontend 
+
+      - name: Build for Web
+        run: flutter build web --base-href /planner/
+        working-directory: ./frontend
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: flutter-web
+          path: frontend/build/web  
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Download Web Build
+        uses: actions/download-artifact@v4
+        with:
+          name: flutter-web
+          path: flutter-web-page
+
+      - name: Setup Git
+        run: |
+          git config --global user.name kea-bot
+          git config --global user.email 201275887+kea-bot@users.noreply.github.com
+
+      - name: Move Build Artifact to Repo
+        run: |
+          rm -rf *
+          mv flutter-web-page/* .
+
+      - name: Commit Changes (new build)
+        run: |
+          git add .
+          git commit -m "Automated build on $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+
+      - name: Push changes to main branch
+        run: |
+          git push origin main
