@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -39,21 +39,18 @@ jobs:
           flutter config --no-analytics
           flutter config --no-cli-animations
           flutter --version
-        working-directory: ./frontend 
 
       - name: Install Pub Dependencies
         run: flutter pub get
-        working-directory: ./frontend 
 
       - name: Build for Web
         run: flutter build web --base-href /planner/
-        working-directory: ./frontend
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
           name: flutter-web
-          path: frontend/build/web  
+          path: build/web  
 
   deploy:
     runs-on: ubuntu-latest
