@@ -23,10 +23,10 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
 
-      - name: Checkout website_flutter branch
+      - name: Checkout backend branch
         uses: actions/checkout@v4
         with:
-          ref: website_flutter
+          ref: backend
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -78,7 +78,7 @@ jobs:
 
       - name: Move Build Artifact to Repo
         run: |
-          rm -rf *
+          find . -mindepth 1 -maxdepth 1 ! -name '.github' -exec rm -rf {} +
           mv flutter-web-page/* .
 
       - name: Commit Changes (new build)
