@@ -39,7 +39,7 @@ header {
 }
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.25rem; }
-.mark { width: 36px; height: 36px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; }
+.mark { width: 36px; height: 36px }
 nav.links { display: flex; gap: 20px; font-weight: 500; color: var(--muted); }
 nav.links a { padding: 6px 10px; border-radius: 6px; transition: background .2s; }
 nav.links a:hover { background: #f1f5f9; }
