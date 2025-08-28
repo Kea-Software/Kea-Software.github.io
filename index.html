@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kea Software — Community & Projects</title>
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <div class="mark" aria-hidden>
+          <img src="assets/images/w.svg">
+        </div>
+        <span>Kea Software</span>
+      </a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="container">
+    <section class="hero">
+      <h1 class="title">Innovative solutions designed with our users in mind first</h1>
+      <p class="lead">Kea Software is a small collective based in Switzerland, building software tools for schools and communities. We create practical applications shaped by real needs.</p>
+      <div class="actions">
+        <a href="#projects" class="btn btn-primary">Explore projects</a>
+        <a href="#work" class="btn btn-outline">See recent work</a>
+      </div>
+      <ul class="stats">
+        <li><span class="value">2</span><span class="muted">Active projects</span></li>
+        <li><span class="value">3</span><span class="muted">Contributors</span></li>
+        <li><span class="value">2023</span><span class="muted">Building Since</span></li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Recent work</h2>
+      <p class="muted-text">Examples of what we've built</p>
+      <div class="projects">
+        <article class="project">
+          <img src="https://lesson-gear.github.io/commonUI/elements/heading.svg" alt="Lesson Gear Screenshot">
+          <h3>Lesson Gear</h3>
+          <p class="muted-text">An ad-free site with tools for teachers: make groups, seating arrangements, and randomly pick students fairly.</p>
+        </article>
+        <article class="project">
+          <img src="assets/images/Untitled-28.svg" alt="Planner Screenshot">
+          <h3>Planner</h3>
+          <p class="muted-text">A collaborative agenda app for teachers and students — organize, plan, and share assignments and events.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="muted-text">Reach out for collaboration, contributions, or research inquiries.</p>
+      <div class="contact">
+        <div>
+          <strong>Email</strong><br>
+          <a href="mailto:" class="highlight-link">fatales.waivers0e@icloud.com</a>
+        </div>
+        <div>
+          <strong>GitHub</strong><br>
+          <a href="https://github.com/Kea-Software" class="highlight-link">Our Github Profile</a>
+        </div>
+        <div>
+          <strong>Location</strong><br>
+          Switzerland
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Kea Software</div>
+      <div><a href="#about">About</a> · <a href="#contact">Contact</a> · <a href="#">License</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
