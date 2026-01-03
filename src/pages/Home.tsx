@@ -1,6 +1,7 @@
 import ToolTimeLogo from "@/assets/home/ToolTime_Logo_Full.png";
 import { Link } from "react-router";
 import {maxXSize} from "@/pages/overview/PlannerInfo";
+import KeaPlannerLogo from "@/assets/home/kea-planner_logo.svg";
 
 function Home() {
   return (
@@ -62,7 +63,7 @@ function Home() {
             </a>
             {/* Project 2 */}
             <Link to="/overview/planner">
-              <ProjectBox imagePath={"https://kea-software.github.io/assets/images/kea-planner_logo.svg"} title={"Kea Planner"} description={"A collaborative agenda app for teachers and students — organize, plan, and share assignments and events."} />
+              <ProjectBox imagePath={KeaPlannerLogo} title={"Kea Planner"} description={"A collaborative agenda app for teachers and students — organize, plan, and share assignments and events."} />
             </Link>
             {/* Project 3 */}
             <a href="https://kea-software.github.io/ToolTime">
