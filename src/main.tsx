@@ -8,7 +8,6 @@ import PlannerInfo from './pages/overview/PlannerInfo.tsx';
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 import { ThemeProvider } from "@/components/theme-provider.tsx";
-import NotFound from "@/pages/NotFound.tsx";
 
 
 export default function ScrollToTop() {
@@ -33,7 +32,6 @@ createRoot(document.getElementById('root')!).render(
                 <Route path='planner' element={<PlannerInfo/>} />
             </Route>
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
