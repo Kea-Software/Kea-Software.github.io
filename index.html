@@ -1,117 +1,13 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kea Software</title>
-  <link rel="stylesheet" href="https://kea-software.github.io/assets/styles/main.css">
-  <link rel="icon" href="https://kea-software.github.io/assets/icons/favicon.png" sizes="any" type="image/png">
-
-</head>
-<body>
-<header>
-  <div class="container nav">
-    <a class="brand" href="#">
-      <div class="mark" aria-hidden>
-        <img src="https://kea-software.github.io/assets/images/kea-software_logo_plain.svg" alt="Kea Software Logo">
-      </div>
-      <span>Kea Software</span>
-    </a>
-
-    <!-- Toggle button (hidden on desktop) -->
-    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-
-    <nav class="links" aria-label="Primary navigation">
-      <a href="#projects">Projects</a>
-      <a href="#top">About</a>
-      <a href="#contact" class="cta">Contact</a>
-    </nav>
-  </div>
-</header>
-
-
-  <main class="container">
-    <section class="hero" id="top">
-      <h1 class="title">Innovative solutions designed with our users in mind first</h1>
-      <p class="lead">Kea Software is a small collective based in Switzerland, building software tools for schools and communities. We create practical applications shaped by real needs.</p>
-      <div class="actions">
-        <a href="#projects" class="btn btn-primary">Explore projects</a>
-        <a href="https://github.com/Kea-Software" class="btn btn-outline">Visit us on Github</a>
-      </div>
-      <ul class="stats">
-        <li><span class="value">2</span><span class="muted">Active projects</span></li>
-        <li><span class="value">3</span><span class="muted">Contributors</span></li>
-        <li><span class="value">2023</span><span class="muted">Building Since</span></li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Recent work</h2>
-      <p class="muted-text">Examples of what we've built</p>
-      <div class="projects">
-        <a href="https://lesson-gear.github.io">
-          <article class="project">
-            <img src="https://lesson-gear.github.io/commonUI/elements/heading.svg" alt="Lesson Gear Screenshot">
-            <h3>Lesson Gear</h3>
-            <p class="muted-text">An ad-free site with tools for teachers: make groups, seating arrangements, and randomly pick students fairly.</p>
-        </article>
-      </a>
-        <a href="https://kea-software.github.io/planner">
-          <article class="project">
-            <img src="https://kea-software.github.io/assets/images/kea-planner_logo.svg" alt="Planner Screenshot">
-            <h3>Planner</h3>
-            <p class="muted-text">A collaborative agenda app for teachers and students — organize, plan, and share assignments and events.</p>
-          </article>
-        </a>
-          <a href="https://kea-software.github.io/ToolTime">
-          <article class="project">
-            <img src="assets/images/ToolTime_Logo_Full.png" alt="ToolTime Screenshot">
-            <h3>ToolTime</h3>
-            <p class="muted-text">A simple web solution to calculate machinery usage costs by specifying time and material used.</p>
-          </article>
-        </a>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="muted-text">Reach out for collaboration, contributions, or research inquiries.</p>
-      <div class="contact">
-        <div>
-          <strong>Email</strong><br>
-          <a href="mailto:" class="highlight-link">fatales.waivers0e@icloud.com</a>
-        </div>
-        <div>
-          <strong>GitHub</strong><br>
-          <a href="https://github.com/Kea-Software" class="highlight-link">Our Github Profile</a>
-        </div>
-        <div>
-          <strong>Location</strong><br>
-          Switzerland
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Kea Software</div>
-      <div><a href="#about">About</a> · <a href="#contact">Contact</a> · <a href="#">License</a></div>
-    </div>
-  </footer>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-  <script>
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('nav.links');
-
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('show');
-  });
-</script>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kea Software</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
