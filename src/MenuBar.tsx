@@ -187,7 +187,7 @@ function Header() {
               <span>·</span>
               <a href="#contact" className="hover:text-teal-700">Contact</a>
               <span>·</span>
-              <a href="#" className="hover:text-teal-700">License</a>
+              <a href="https://kea-software.github.io/resources/terms.html" className="hover:text-teal-700">Terms</a>
             </div>
           </div>
         </footer>
