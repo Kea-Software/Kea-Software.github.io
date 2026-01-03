@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>license and Conditions</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="license-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        async function loadlicense() {
+            try {
+                const response = await fetch('https://Kea-Software.github.io/public/resources/license.md'); // adjust if needed
+                if (!response.ok) throw new Error('Failed to load license.md');
+
+                const markdown = await response.text();
+                document.getElementById('license-container').innerHTML = marked.parse(markdown);
+            } catch (err) {
+                console.error(err);
+                document.getElementById('license-container').textContent = "Could not load license.";
+            }
+        }
+
+        loadlicense();
+    </script>
+</body>
+</html>
