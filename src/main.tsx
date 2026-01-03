@@ -32,7 +32,6 @@ createRoot(document.getElementById('root')!).render(
             <Route path="overview">
                 <Route path='planner' element={<PlannerInfo/>} />
             </Route>
-            {/* <Route path="settings" element={<Settings />} /> */}
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
