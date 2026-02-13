@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from "react-router";
+import { Routes, Route, HashRouter } from "react-router";
 import './index.css'
 import Header from './MenuBar.tsx'
 import Home from './pages/Home.tsx'
@@ -10,6 +10,7 @@ import { useLocation } from "react-router";
 import { ThemeProvider } from "@/components/theme-provider.tsx";
 
 
+// Scroll to top on route change
 export default function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -20,20 +21,21 @@ export default function ScrollToTop() {
   return null;
 }
 
+// Render the app
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-      <BrowserRouter>
+      <HashRouter>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Header />}>
             <Route index element={<Home />} />
             <Route path="overview">
-                <Route path='planner' element={<PlannerInfo/>} />
+              <Route path="planner" element={<PlannerInfo />} />
             </Route>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
-  </StrictMode>,
-)
+  </StrictMode>
+);
