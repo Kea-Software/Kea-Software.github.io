@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import {maxXSize} from "@/pages/overview/PlannerInfo";
 import KeaPlannerLogo from "@/assets/home/kea-planner_logo.svg";
 import LessonGearLogo from "@/assets/lessongear/lessonGearLogo.svg";
-import LessonGearLogoDark from "@/assets/lessongear/lessonGearLogoDarkMode.svg";
 
 function Home() {
   return (
