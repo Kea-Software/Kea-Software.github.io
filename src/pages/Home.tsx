@@ -2,6 +2,8 @@ import ToolTimeLogo from "@/assets/home/ToolTime_Logo_Full.png";
 import { Link } from "react-router";
 import {maxXSize} from "@/pages/overview/PlannerInfo";
 import KeaPlannerLogo from "@/assets/home/kea-planner_logo.svg";
+import LessonGearLogo from "@/assets/lessongear/lessonGearLogo.svg";
+import LessonGearLogoDark from "@/assets/lessongear/lessonGearLogoDarkMode.svg";
 
 function Home() {
   return (
@@ -59,7 +61,7 @@ function Home() {
         
             {/* Project 1 */}
             <a href="https://lesson-gear.github.io">
-              <ProjectBox imagePath={"https://lesson-gear.github.io/commonUI/elements/heading.svg"} title={"Lesson Gear"} description={"An ad-free site with tools for teachers: make groups, seating arrangements, and randomly pick students fairly."} />
+              <ProjectBox imagePath={LessonGearLogo} title={"Lesson Gear"} description={"An ad-free site with tools for teachers: make groups, seating arrangements, and randomly pick students fairly."} />
             </a>
             {/* Project 2 */}
             <Link to="/overview/planner">

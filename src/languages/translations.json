@@ -1,0 +1,11 @@
+{
+    "en": {
+        "seatMatchDescription": "Generate random seat matches for your class.",
+        "GroupGeneratorDescription": "Generate random groups for your class."
+    },
+
+    "de": {
+        "seatMatchDescription": "Generiere zufällige Sitzordnungen für Ihre Klasse.",
+        "GroupGeneratorDescription": "Generiere zufällige Gruppen für Ihre Klasse."
+    }
+}

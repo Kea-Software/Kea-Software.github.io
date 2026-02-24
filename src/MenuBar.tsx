@@ -11,6 +11,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import * as Menubar from "@radix-ui/react-navigation-menu";
+import { CircleUserIcon } from "lucide-react";
 
 
 function Header() {
@@ -72,62 +74,77 @@ function Header() {
 
           {/* desktop */}
           <div className="hidden md:flex w-full space-x-3">
-            <div className="relative mr-auto ml-4">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className="font-semiboldbold text-md">Projects</NavigationMenuTrigger>
-                    <NavigationMenuContent className="dark:bg-gray-800">
-                      <ul className="grid w-[250px] gap-4">
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/overview/planner">
-                              <div className="font-medium">Kea Planner</div>
-                              <div className="text-muted-foreground">
-                                Shared online agenda for school
-                              </div>
-                            </Link>
-                          </NavigationMenuLink>
-                          <NavigationMenuLink asChild>
-                            <Link to="/">
-                              <div className="font-medium">LessonGear</div>
-                              <div className="text-muted-foreground">
-                                Tools for every lesson
-                              </div>
-                            </Link>
-                          </NavigationMenuLink>
-                          <NavigationMenuLink asChild>
-                            <Link to="/">
-                              <div className="font-medium">ToolTime</div>
-                              <div className="text-muted-foreground">
-                                Mashine usage calculations
-                              </div>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="font-semiboldbold text-md">Projects</NavigationMenuTrigger>
+                  <NavigationMenuContent className="dark:bg-gray-800">
+                    <ul className="grid w-[250px] gap-4">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/overview/planner">
+                            <div className="font-medium">Kea Planner</div>
+                            <div className="text-muted-foreground">
+                              Shared online agenda for school
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link to="/">
+                            <div className="font-medium">LessonGear</div>
+                            <div className="text-muted-foreground">
+                              Tools for every lesson
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link to="/">
+                            <div className="font-medium">ToolTime</div>
+                            <div className="text-muted-foreground">
+                              Mashine usage calculations
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
             
-              </NavigationMenu>
-            
+            <div className="ml-auto mr-0 flex space-x-2">
+              <ModeToggle />
+              <Menubar.Root className="relative">
+                <Menubar.List className="flex">
+                  <Menubar.Item>
+                    {/* Icon trigger */}
+                    <Menubar.Trigger className="p-2 cursor-pointer rounded outline-none hover:bg-gray-100 dark:hover:bg-gray-800">
+                      <CircleUserIcon className="h-5 w-5" />
+                    </Menubar.Trigger>
+                    {/* Dropdown */}
+                    <Menubar.Content className="absolute right-0 mt-2 w-[160px] rounded-md bg-white dark:bg-gray-800 p-3 shadow-md">
+                      <div className="flex flex-col gap-2 text-sm">
+                        <span className="text-muted-foreground">Not logged in</span>
+                        <button className="rounded px-3 py-1.5 text-left hover:bg-gray-100 dark:hover:bg-gray-700">
+                          Log in
+                        </button>
+                        <button className="rounded px-3 py-1.5 text-left hover:bg-gray-100 dark:hover:bg-gray-700">
+                          Sign up
+                        </button>
+                      </div>
+                    </Menubar.Content>
+                  </Menubar.Item>
+                </Menubar.List>
+              </Menubar.Root>
+              
+              <a
+                  href="#contact"
+                  className="px-3 py-1 rounded-lg bg-primary-button-background text-white hover:bg-primary-button-hover transition"
+                >
+                  Contact
+                </a>
             </div>
-
-            <ModeToggle />
-            {/* <button className="hover:cursor-pointer hover:bg-gray-800 rounded-md px-2">
-              <CircleUserIcon
-                className="h-5 w-5 text-black dark:text-white"
-                strokeWidth={2}
-              />            
-            </button> */}
-
-            <a
-                href="#contact"
-                className="px-3 py-1 rounded-lg bg-primary-button-background text-white hover:bg-primary-button-hover transition"
-              >
-                Contact
-              </a>
           </div>
 
           

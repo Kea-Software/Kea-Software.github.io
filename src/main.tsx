@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { useLocation } from "react-router";
 import { ThemeProvider } from "@/components/theme-provider.tsx";
 
-
 // Scroll to top on route change
 export default function ScrollToTop() {
   const { pathname } = useLocation();
@@ -21,7 +20,7 @@ export default function ScrollToTop() {
   return null;
 }
 
-// Render the app
+// Render the app 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
